@@ -1,0 +1,33 @@
+# Compiled class files
+target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+*.iml
+.idea/
+
+# VS Code
+.vscode/
+
+# Maven
+*.jar
+*.war
+*.ear
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Profile photos (user-uploaded)
+data/profile_photos/*.png
+data/profile_photos/*.jpg
+
+# Leave data (runtime-generated)
+data/leave_requests.csv
+
+# Maven wrapper jar (optional — keep wrapper scripts)
+!.mvn/wrapper/maven-wrapper.jar
