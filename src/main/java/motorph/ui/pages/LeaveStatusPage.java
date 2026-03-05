@@ -61,7 +61,7 @@ public class LeaveStatusPage extends JPanel {
     }
 
     private static class LModel extends AbstractTableModel {
-        private static final String[] C = {"ID", "Employee", "Type", "Start", "End", "Days", "Status", "Decided By", "Decision Date"};
+        private static final String[] C = {"ID", "Employee", "Type", "Start", "End", "Days", "Reason", "Status", "Submitted Date", "Decided By", "Decision Date"};
         private List<LeaveRequest> data;
         LModel(List<LeaveRequest> d) { data = new ArrayList<>(d); }
         void setData(List<LeaveRequest> d) { data = new ArrayList<>(d); fireTableDataChanged(); }
@@ -78,9 +78,11 @@ public class LeaveStatusPage extends JPanel {
                 case 3: return l.getStartDate();
                 case 4: return l.getEndDate();
                 case 5: return l.getDays();
-                case 6: return l.getStatus();
-                case 7: return l.getDecidedBy() != null ? l.getDecidedBy() : "\u2014";
-                case 8: return l.getDecisionDate() != null ? l.getDecisionDate() : "\u2014";
+                case 6: return l.getReason() != null ? l.getReason() : "\u2014";
+                case 7: return l.getStatus();
+                case 8: return l.getSubmittedDate() != null ? l.getSubmittedDate() : "\u2014";
+                case 9: return l.getDecidedBy() != null ? l.getDecidedBy() : "\u2014";
+                case 10: return l.getDecisionDate() != null ? l.getDecisionDate() : "\u2014";
                 default: return "";
             }
         }
