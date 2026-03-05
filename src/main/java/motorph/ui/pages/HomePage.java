@@ -33,6 +33,7 @@ public class HomePage extends JFrame {
                     "Are you sure you want to logout?", "Logout",
                     JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (c == JOptionPane.YES_OPTION) {
+                motorph.util.AppContext.getInstance().clearSession();
                 dispose();
                 SwingUtilities.invokeLater(App::showLogin);
             }
