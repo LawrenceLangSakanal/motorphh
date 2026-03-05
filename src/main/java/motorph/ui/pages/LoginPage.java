@@ -120,7 +120,7 @@ public class LoginPage extends JFrame {
         main.add(center, BorderLayout.CENTER);
 
         // Footer hint
-        JLabel hint = new JLabel("Hint: ID = Employee Number, Password = last name + birthday (e.g. Garcia06/19/1986)", SwingConstants.CENTER);
+        JLabel hint = new JLabel("Hint: Employee ID = your login ID, Password = your employee ID number (e.g. 10001)", SwingConstants.CENTER);
         hint.setFont(Theme.FONT_SMALL);
         hint.setForeground(Theme.TEXT_MUTED);
         hint.setBorder(BorderFactory.createEmptyBorder(0, 10, 12, 10));
@@ -153,6 +153,7 @@ public class LoginPage extends JFrame {
         Optional<Employee> result = employeeRepo.authenticate(empId, pw);
         if (result.isPresent()) {
             Employee emp = result.get();
+            motorph.util.AppContext.getInstance().setCurrentEmployee(emp);
             RoleService roleService = new RoleService();
             AttendanceService attendanceService = new AttendanceService(attendanceRepo);
             LeaveService leaveService = new LeaveService(leaveRepo);
